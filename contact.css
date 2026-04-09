@@ -1,0 +1,287 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #000; /* black background */
+    color: #fff; /* white text */
+    line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #1e1d1d;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 90px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.brand-text .site-name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.brand-text .sub-text {
+    font-size: 12px;
+    color: #ccc;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    padding: 5px 10px;
+}
+
+.nav-links a:hover {
+    background-color: #333;
+    border-radius: 4px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: #1e1d1d;
+    min-width: 220px;
+    padding: 10px 0;
+    border-radius: 6px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+
+}
+
+.dropdown-menu li {
+    list-style: none; /* ensure no bullets */
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 12px 18px;
+    font-size: 16px;
+    color: white;
+
+}
+
+.dropdown-menu li a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* PORTFOLIO / BIO SECTION */
+.portfolio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 20px;
+}
+
+.bio-section {
+    display: flex;
+    flex-direction: row; /* image left, content right */
+    align-items: flex-start;
+    gap: 30px;
+    width: 900px;
+    flex-wrap: wrap;
+    color: #fff; /* white text */
+}
+
+/* PROFILE IMAGE */
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 10px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* BIO CONTENT */
+.bio-section > h1,
+.bio-section > h3,
+.bio-section > p,
+.bio-section > .bio-details,
+.bio-section > .hobbies-box {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+    color: #fff; /* white text */
+}
+
+.bio-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hobbies-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #222; /* dark gray so it stands out */
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+    display: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 18px;
+}
+
+.social-icons a:hover {
+    color: yellow;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 900px;
+    background: #111; /* dark background */
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #555; /* gray border */
+    background: #000; /* black input background */
+    color: #fff; /* white text inside input */
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #aaa; /* placeholder color */
+}
+
+.contact-form button {
+    padding: 12px;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #ddd;
+}
+
+/* FOOTER */
+.footer {
+    background:  #1e1d1d;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 40px;
+}
+
+.footer-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.footer-subtext {
+    font-size: 13px;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.copyright {
+    font-size: 12px;
+}
+
+.project-note {
+    font-size: 11px;
+    opacity: 0.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 950px) {
+    .bio-section {
+        flex-direction: column;
+        width: 90%;
+        text-align: center;
+    }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .hobbies-box {
+        width: 100%;
+    }
+
+    .contact-section {
+        width: 90%;
+    }
+}
